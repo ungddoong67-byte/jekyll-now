@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,3 +52,97 @@
   }
   </script>
 </head>
+<body>
+
+  <!-- 모바일 전용 상단 고정 2구 버튼 -->
+  <div class="mobile-bottom-nav">
+    <a href="tel:1661-4262" class="btn-call">📞 전화연결 1661-4262</a>
+    <a href="https://pf.kakao.com/_xnRKLxb/chat" target="_blank" rel="noopener noreferrer" class="btn-kakao">💬 카카오톡 문의</a>
+  </div>
+
+  <!-- 컨테이너 -->
+  <div class="container" id="mainContainer">
+    <!-- 1 ~ 6번: 풀페이지(100vh 스크롤 스냅) 섹션 -->
+    <section class="section" id="section1">
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ '/images/m_pb1.png' | relative_url }}">
+        <img src="{{ '/images/pb1.png' | relative_url }}" alt="흑석동퀵서비스 친절한 퀵" class="section-img">
+      </picture>
+      <div class="content">
+        <h1>흑석동퀵서비스</h1>
+        <h2>흑석동 전지역 24시 퀵서비스</h2>
+      </div>
+    </section>
+
+    <section class="section" id="section2">
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ '/images/m_pb2.png' | relative_url }}">
+        <img src="{{ '/images/pb2.png' | relative_url }}" alt="빠른배송퀵" class="section-img">
+      </picture>
+    </section>
+
+    <section class="section" id="section3">
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ '/images/m_pb3.png' | relative_url }}">
+        <img src="{{ '/images/pb3.png' | relative_url }}" alt="서울,경기 전지역퀵" class="section-img">
+      </picture>
+    </section>
+
+    <section class="section" id="section4">
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ '/images/m_pb4.png' | relative_url }}">
+        <img src="{{ '/images/pb4.png' | relative_url }}" alt="카드결제 가능 퀵배송" class="section-img">
+      </picture>
+    </section>
+
+    <section class="section" id="section5">
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ '/images/m_pb5.png' | relative_url }}">
+        <img src="{{ '/images/pb5.png' | relative_url }}" alt="야간퀵 24시퀵 365일퀵" class="section-img">
+      </picture>
+    </section>
+
+    <section class="section" id="section6">
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ '/images/m_pb6.png' | relative_url }}">
+        <img src="{{ '/images/pb6.png' | relative_url }}" alt="캐시백 서비스" class="section-img">
+      </picture>
+    </section>
+
+<!-- 여기에 포스트 노출 영역 -->
+<section class="section-normal" id="section7">
+{{ content }}
+
+  <!-- 하단 푸터 영역 -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <p class="footer-company">상호:에이플러스퀵서비스 흑석동지점</p>
+        <p>통신판매업 제 2012-서울강북-0482호</p>
+        <p>대표전화: <a href="tel:1661-4262" class="footer-tel">1661-4262</a></p>
+        <p>사업자번호:217-03-31209</p>
+        <p>대표자:이서미</p>
+        <p>이메일:aplusquick78@gmail.com</p>
+        <p>365일 24시간 연중무휴 관제센터 운영</p>
+        <p class="footer-copyright">Copyright © 에이플러스 퀵서비스 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</section>
+  </div>
+
+  <script src="{{ '/file/aplusquick.js' | relative_url }}"></script>
+        
+  <script>
+  // iOS Safari 주소창 변동에 따른 100vh 실제 높이 계산
+  function setRealVh() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  window.addEventListener('resize', setRealVh);
+  window.addEventListener('orientationchange', setRealVh);
+  setRealVh();
+</script>
+</body>
+</html>
