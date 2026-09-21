@@ -373,30 +373,3 @@ html, body {
   overflow: hidden;
 }
 
-/* 포스트 노출 영역 (#section7 및 .posts) 전체 스타일 설정 */
-#section7, 
-#section7 .posts, 
-#section7 article.post {
-  background-color: #ffffff !important; /* 바탕화면 흰색 */
-  color: #000000 !important;            /* 글씨체 검정색 */
-  font-family: "Malgun Gothic", "맑은 고딕", AppleSDGothicNeo-Regular, dotum, sans-serif !important; /* 맑은고딕 설정 */
-}
-
-/* 포스트 내부 제목 및 링크 색상 검정색 고정 */
-#section7 .posts h1,
-#section7 .posts h1 a,
-#section7 .posts h2,
-#section7 .posts h3,
-#section7 .posts .entry,
-#section7 .posts p {
-  color: #000000 !important;
-  font-family: "Malgun Gothic", "맑은 고딕", AppleSDGothicNeo-Regular, dotum, sans-serif !important;
-}
-
-/* 'Read More' 버튼 및 일반 링크 스타일 */
-#section7 .posts a.read-more,
-#section7 .posts .entry a {
-  color: #000000 !important;
-  text-decoration: underline;
-  font-weight: bold;
-}
