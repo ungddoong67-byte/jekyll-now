@@ -2,82 +2,68 @@
 # This file contains configuration flags to customize your site
 #
 
-# Name of your site (displayed in the header)
-name: Your Name
+# 사이트 기본 정보 (head 태그 및 푸터에서 활용)
+name: 에이플러스 흑석동퀵서비스
+title: 흑석동 퀵서비스 | 빠르고 친절한 에이플러스 흑석동퀵
+description: 흑석동 전지역 어디서든 24시3654일 친절한 퀵배송 오토바이퀵, 다마스퀵, 라보용달, 1톤용달
 
-# Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
-
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
+# 프로필 이미지/아바타 URL
 avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
 
 #
 # Flags below are optional
 #
 
-# Includes an icon in the footer for each username you enter
+# 푸터 링크 설정
 footer-links:
   dribbble:
-  email:
+  email: aplusquick78@gmail.com
   facebook:
   flickr:
-  github: barryclark/jekyll-now
+  github:
   instagram:
   linkedin:
   pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: jekyllrb
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
+  rss: true
+  twitter:
+  stackoverflow:
+  youtube:
+  googleplus:
 
-
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
+# 댓글 및 애널리틱스 설정
 disqus:
-
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
 
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
-url:
-
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
+# 도메인 및 GitHub Pages 하위 경로 설정 (핵심)
+url: "https://1588-0170.com" # 또는 https://<your-username>.github.io
+baseurl: "/" # repository 이름 (앞에 / 필수)
 
 #
-# !! You don't need to change any of the configuration flags below !!
+# !! Build & Jekyll settings !!
 #
 
 permalink: /:title/
 
-# The release of Jekyll Now that you're using
+# Jekyll Now 버전
 version: v1.2.0
 
-# Jekyll 3 now only supports Kramdown for Markdown
+# 마크다운 및 파서 설정
 kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
   input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
     css_class: 'highlight'
 
-# Set the Sass partials directory, as we're using @imports
+# Sass 설정
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  style: :expanded
 
-# Use the following plug-ins
-gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+# 플러그인 설정 (Jekyll 최신 규격 plugins 사용)
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
 
-# Exclude these files from your production _site
+# 빌드 시 제외할 파일 목록
 exclude:
   - Gemfile
   - Gemfile.lock
