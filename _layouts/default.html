@@ -109,102 +109,28 @@
       </picture>
     </section>
 
-    <!-- 4열 그리드 통합 서비스 메인 영역 -->
+    <!-- 버튼형 포스트 생성 및 게시판 영역 -->
     <section class="section-normal" id="section7">
-      <div class="site-map-container">
-
-        <!-- 1번째 줄 4컬럼 -->
-        <div class="sitemap-grid">
-          <div class="sitemap-col">
-            <h3><a href="{{ '/' | relative_url }}#section7">가평군 퀵서비스 <span>›</span></a></h3>
-            <ul>
-              <li><a href="{{ '/' | relative_url }}">가평읍 24시 퀵배송</a></li>
-              <li><a href="{{ '/' | relative_url }}">설악면 오토바이 퀵</a></li>
-              <li><a href="{{ '/' | relative_url }}">청평면 다마스 배송</a></li>
-              <li><a href="{{ '/' | relative_url }}">상면/조종면 라보 배송</a></li>
-              <li><a href="{{ '/' | relative_url }}">북면 펜션/캠핑장 퀵</a></li>
-            </ul>
-          </div>
-
-          <div class="sitemap-col">
-            <h3><a href="tel:1661-4262">운송 차종 안내 <span>›</span></a></h3>
-            <ul>
-              <li><a href="tel:1661-4262">오토바이 (긴급 서류/소형)</a></li>
-              <li><a href="tel:1661-4262">다마스 (박스/기상악화시)</a></li>
-              <li><a href="tel:1661-4262">라보 (소형 화물/가구)</a></li>
-              <li><a href="tel:1661-4262">1톤 트럭 (카고/탑차)</a></li>
-            </ul>
-          </div>
-
-          <div class="sitemap-col">
-            <h3><a href="tel:1661-4262">서비스 유형 <span>›</span></a></h3>
-            <ul>
-              <li><a href="tel:1661-4262">신속한 배송 서비스</a></li>
-              <li><a href="tel:1661-4262">주간/야간 24시 관제</a></li>
-              <li><a href="tel:1661-4262">기업 법인 및 장기 계약</a></li>
-              <li><a href="tel:1661-4262">신용 결제 / 카드 결제</a></li>
-              <li><a href="tel:1661-4262">탁송 및 픽업 서비스</a></li>
-            </ul>
-          </div>
-
-          <div class="sitemap-col">
-            <h3><a href="{{ '/' | relative_url }}#section7">자유 게시판 <span>›</span></a></h3>
-            <ul>
-              {% if site.posts.size > 0 %}
-                {% for post in site.posts limit:5 %}
-                  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-                {% endfor %}
-              {% else %}
-                <li><a href="#">등록된 게시글이 없습니다.</a></li>
-              {% endif %}
-              <li><a href="{{ '/write.html' | relative_url }}" class="badge-link">✏️ 글쓰기 문의 <span class="badge">추천</span></a></li>
-            </ul>
-          </div>
+      <div class="board-container">
+        
+        <h2 class="section-title">에이플러스퀵서비스 서울,경기,인천 전지역 지점 안내</h2>
+        
+        <!-- 게시글(포스트) 동적 버튼 그리드 생성 영역 -->
+        <div class="area-grid">
+          {% if site.posts.size > 0 %}
+            {% for post in site.posts %}
+              <a href="{{ post.url | relative_url }}" class="area-btn">{{ post.title }}</a>
+            {% endfor %}
+          {% else %}
+            <div style="grid-column: 1 / -1; text-align: center; padding: 20px; color: #64748b;">
+              등록된 지점 안내 게시글이 없습니다.
+            </div>
+          {% endif %}
         </div>
 
-        <!-- 2번째 줄 4컬럼 -->
-        <div class="sitemap-grid" style="margin-top: 40px;">
-          <div class="sitemap-col">
-            <h3><a href="tel:1661-4262">연계 서비스 <span>›</span></a></h3>
-            <ul>
-              <li><a href="tel:1661-4262">KTX/터미널 수하물 연계</a></li>
-              <li><a href="tel:1661-4262">공항 화물 접수 및 수령</a></li>
-              <li><a href="tel:1661-4262">전국 연계 퀵배송</a></li>
-              <li><a href="tel:1661-4262">아울렛/마트 심야 픽업</a></li>
-            </ul>
-          </div>
-
-          <div class="sitemap-col">
-            <h3><a href="https://pf.kakao.com/_xnRKLxb/chat" target="_blank" rel="noopener noreferrer">카카오톡 문의 <span>›</span></a></h3>
-            <ul>
-              <li><a href="https://pf.kakao.com/_xnRKLxb/chat" target="_blank" rel="noopener noreferrer">실시간 1:1 상담 접수</a></li>
-              <li><a href="https://pf.kakao.com/_xnRKLxb/chat" target="_blank" rel="noopener noreferrer">요금 조회 및 단가 문의</a></li>
-              <li><a href="https://pf.kakao.com/_xnRKLxb/chat" target="_blank" rel="noopener noreferrer">배차 상태 실시간 확인</a></li>
-            </ul>
-          </div>
-
-          <div class="sitemap-col">
-            <h3><a href="tel:1661-4262">고객 센터 <span>›</span></a></h3>
-            <ul>
-              <li><a href="tel:1661-4262">대표전화: 1661-4262</a></li>
-              <li><a href="tel:1661-4262">365일 24시간 연중무휴</a></li>
-              <li><a href="tel:1661-4262">세금계산서 발행 안내</a></li>
-            </ul>
-          </div>
-
-          <div class="sitemap-col">
-            <h3><a href="{{ '/' | relative_url }}">에이플러스 안내 <span>›</span></a></h3>
-            <ul>
-              <li><a href="{{ '/' | relative_url }}">지점 소개</a></li>
-              <li><a href="{{ '/' | relative_url }}">이용 약관</a></li>
-              <li><a href="{{ '/' | relative_url }}">개인정보 처리방침</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 개별 본문(Post/Page) 접속 시 하단 출력 위치 -->
+        <!-- 개별 본문(Post / Page) 접속 시 출력 위치 -->
         {% if content and content != "" %}
-          <div class="post-content-body" style="margin-top: 50px; padding-top: 30px; border-top: 1px solid #eeeeee;">
+          <div class="post-content-body" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
             {{ content }}
           </div>
         {% endif %}
