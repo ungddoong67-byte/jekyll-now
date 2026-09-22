@@ -44,7 +44,7 @@
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "KR",
-      "addressLocality": "경기도 가평군"
+      "addressLocality": "가평군"
     }
   }
   </script>
@@ -130,23 +130,25 @@
             </tr>
           </thead>
           <tbody id="board-list">
-            {% for post in site.posts %}
-              <tr>
-                <td class="title-col">
-                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                </td>
-                <td class="writer-col">{{ post.author | default: "관리자" }}</td>
-                <td class="date-col">{{ post.date | date: "%Y-%m-%d" }}</td>
-              </tr>
-            {% empty %}
+            {% if site.posts.size > 0 %}
+              {% for post in site.posts %}
+                <tr>
+                  <td class="title-col">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                  </td>
+                  <td class="writer-col">{{ post.author | default: "관리자" }}</td>
+                  <td class="date-col">{{ post.date | date: "%Y-%m-%d" }}</td>
+                </tr>
+              {% endfor %}
+            {% else %}
               <tr>
                 <td colspan="3" style="text-align: center;">등록된 게시글이 없습니다.</td>
               </tr>
-            {% endfor %}
+            {% endif %}
           </tbody>
         </table>
 
-        <!-- 하위 페이지(page.html, post.html) 본문 출력 위치 -->
+        <!-- 하위 페이지(page.html, post.html) 및 본문 출력 영역 -->
         <div class="post-content-body" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
           {{ content }}
         </div>
