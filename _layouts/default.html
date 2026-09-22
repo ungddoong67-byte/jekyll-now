@@ -110,14 +110,38 @@
     </section>
 
 <!-- 여기에 포스트 노출 영역 -->
+<!-- 포스트 게시판 영역 -->
 <section class="section-normal" id="section7">
-{{ content }}
+  <div class="board-container">
+    <h2 class="board-title">공지사항 및 안내</h2>
+    
+    <table class="board-table">
+      <thead>
+        <tr>
+          <th class="th-num">번호</th>
+          <th class="th-title">제목</th>
+          <th class="th-date">작성일</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in site.posts %}
+          <tr>
+            <td class="td-num">{{ forloop.rindex }}</td>
+            <td class="td-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </td>
+            <td class="td-date">{{ post.date | date: "%Y-%m-%d" }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 
   <!-- 하단 푸터 영역 -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-info">
-        <p class="footer-company">상호:에이플러스퀵서비스 가평군지점</p>
+        <p class="footer-company">상호:에이플러스퀵서비스 흑석동지점</p>
         <p>통신판매업 제 2012-서울강북-0482호</p>
         <p>대표전화: <a href="tel:1661-4262" class="footer-tel">1661-4262</a></p>
         <p>사업자번호:217-03-31209</p>
@@ -129,7 +153,6 @@
     </div>
   </footer>
 </section>
-  </div>
 
   <script src="{{ '/file/aplusquick.js' | relative_url }}"></script>
         
