@@ -128,11 +128,13 @@
           {% endif %}
         </div>
 
-        <!-- 개별 본문(Post / Page) 접속 시 출력 위치 -->
-        {% if content and content != "" %}
-          <div class="post-content-body" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
-            {{ content }}
-          </div>
+        <!-- 메인 페이지가 아닐 때(개별 포스트/페이지 접속 시)만 본문 출력 -->
+        {% if page.url != "/" and page.url != "/index.html" %}
+          {% if content and content != "" %}
+            <div class="post-content-body" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+              {{ content }}
+            </div>
+          {% endif %}
         {% endif %}
 
       </div>
