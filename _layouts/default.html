@@ -8,8 +8,10 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
+  <!-- 동적 타이틀 설정 (페이지 제목이 있으면 표시, 없으면 기본 사이트 정보 출력) -->
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name | default: "가평퀵서비스" }}{% if site.description %} – {{ site.description }}{% endif %}</title>
 
+  <!-- 구형 IE 호환성 스크립트 -->
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -144,12 +146,10 @@
           </tbody>
         </table>
 
-        <!-- 개별 포스트 및 본문 출력 영역 -->
-        {% if content and content != "" %}
-          <div class="post-content-body" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
-            {{ content }}
-          </div>
-        {% endif %}
+        <!-- 하위 레이아웃(post.html, page.html) 및 개별 본문 주입 위치 -->
+        <div class="post-content-body" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+          {{ content }}
+        </div>
       </div>
 
       <!-- 하단 푸터 영역 -->
