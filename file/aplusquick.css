@@ -133,8 +133,8 @@ body::-webkit-scrollbar {
   min-height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: normal;
-  background-color: #111111;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #111111;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
