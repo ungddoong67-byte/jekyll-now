@@ -374,98 +374,61 @@ html, body {
 }
 
 /* ==================================================
-   4열 사이트맵 그리드 레이아웃 (이미지 스타일)
+   게시판 포스트 버튼 그리드 전용 스타일
    ================================================== */
 
 #section7 {
   background-color: #ffffff !important;
-  padding: 60px 20px !important;
+  padding: 50px 20px !important;
 }
 
-#section7 .site-map-container {
+#section7 .board-container {
   max-width: 1200px;
   margin: 0 auto;
-  font-family: "Malgun Gothic", "맑은 고딕", AppleSDGothicNeo-Regular, sans-serif !important;
-}
-
-/* 4컬럼 그리드 배열 */
-#section7 .sitemap-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-#section7 .sitemap-col {
-  flex: 1 1 21%;
-  min-width: 220px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
 }
 
-/* 카테고리 헤더 (청록색) */
-#section7 .sitemap-col h3 {
-  font-size: 16px;
+#section7 .section-title {
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #2563eb;
+  color: #1e293b;
+  text-align: left;
 }
 
-#section7 .sitemap-col h3 a {
-  color: #008275 !important; /* 이미지 포인트 청록색 */
-  text-decoration: none;
-  display: inline-flex;
+#section7 .area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
+}
+
+#section7 .area-btn {
+  display: flex;
   align-items: center;
-}
-
-#section7 .sitemap-col h3 a span {
-  font-size: 14px;
-  margin-left: 4px;
-}
-
-/* 하위 메뉴 리스트 */
-#section7 .sitemap-col ul {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-#section7 .sitemap-col ul li {
-  margin-bottom: 8px;
-}
-
-#section7 .sitemap-col ul li a {
-  color: #555555 !important;
-  font-size: 13px;
+  justify-content: center;
+  padding: 10px 5px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
   text-decoration: none;
-  line-height: 1.5;
-  transition: color 0.2s ease;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  word-break: keep-all;
+  text-align: center;
 }
 
-#section7 .sitemap-col ul li a:hover {
-  color: #008275 !important;
-  text-decoration: underline;
-}
-
-/* 배지 아이콘 (무료/추천 등) */
-#section7 .badge {
-  background-color: #e6005c;
-  color: #ffffff;
-  font-size: 10px;
+#section7 .area-btn:hover {
+  background-color: #2563eb;
+  color: #ffffff !important;
+  border-color: #2563eb;
   font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 3px;
-  margin-left: 4px;
-}
-
-/* 모바일 반응형 처리 */
-@media (max-width: 768px) {
-  #section7 .sitemap-col {
-    flex: 1 1 45%; /* 모바일에서는 2열로 전환 */
-    margin-bottom: 25px;
-  }
-}
-
-@media (max-width: 480px) {
-  #section7 .sitemap-col {
-    flex: 1 1 100%; /* 소형 모바일에서는 1열 */
-  }
+  transform: translateY(-2px);
 }
