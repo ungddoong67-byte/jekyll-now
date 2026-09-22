@@ -8,8 +8,11 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <!-- 동적 타이틀 설정 (페이지 제목이 있으면 표시, 없으면 기본 사이트 정보 출력) -->
+  <!-- 동적 타이틀 설정 -->
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name | default: "가평퀵서비스" }}{% if site.description %} – {{ site.description }}{% endif %}</title>
+
+  <!-- 공통 메타 태그 모듈 포함 -->
+  {% include meta.html %}
 
   <!-- 구형 IE 호환성 스크립트 -->
   <!--[if lt IE 9]>
@@ -146,7 +149,7 @@
           </tbody>
         </table>
 
-        <!-- 하위 레이아웃(post.html, page.html) 및 개별 본문 주입 위치 -->
+        <!-- 하위 페이지(page.html, post.html) 및 본문 주입 영역 -->
         <div class="post-content-body" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
           {{ content }}
         </div>
