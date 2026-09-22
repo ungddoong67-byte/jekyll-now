@@ -8,10 +8,8 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <!-- 동적 타이틀 설정 (페이지 제목이 있으면 표시, 없으면 기본 사이트 정보 출력) -->
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name | default: "가평퀵서비스" }}{% if site.description %} – {{ site.description }}{% endif %}</title>
 
-  <!-- 구형 IE 호환성 스크립트 -->
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
