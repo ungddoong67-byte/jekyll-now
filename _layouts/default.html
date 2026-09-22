@@ -11,25 +11,22 @@
   <!-- 동적 타이틀 설정 (페이지 제목이 있으면 표시, 없으면 기본 사이트 정보 출력) -->
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name | default: "가평퀵서비스" }}{% if site.description %} – {{ site.description }}{% endif %}</title>
 
-  <!-- 공통 메타 태그 모듈화 -->
-  {% include meta.html %}
-
   <!-- 구형 IE 호환성 스크립트 -->
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
   <link rel="canonical" href="https://gpquick.5282quick.com/">
-  <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/file/aplusquick.css?v=1.5" />
-  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="stylesheet" type="text/css" href="{{ '/file/aplusquick.css?v=1.5' | relative_url }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ '/feed.xml' | relative_url }}" />
 
   <!-- OpenGraph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="친절하고 빠른 에이플러스 가평퀵">
   <meta property="og:description" content="가평 서울·경기 전지역 24시 퀵서비스 우수,전문업체">
   <meta property="og:url" content="https://gpquick.5282quick.com/">
-  <meta property="og:image" content="{{ site.baseurl }}/images/og_image.webp">
+  <meta property="og:image" content="{{ '/images/og_image.webp' | relative_url }}">
 
   <!-- Local Business Schema -->
   <script type="application/ld+json">
@@ -109,63 +106,68 @@
       </picture>
     </section>
 
-<!-- 포스트 게시판 영역 -->
-<section class="section-normal" id="section7">
-  <div class="board-container">
-    <!-- 상단 메뉴 -->
-    <nav style="margin-bottom: 20px;">
-      <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: #333; font-weight: bold;">홈</a> | 
-      <a href="{{ '/' | relative_url }}#section7" style="text-decoration: none; color: #3ecf8e; font-weight: bold;">게시판</a>
-    </nav>
+    <!-- 포스트 게시판 영역 -->
+    <section class="section-normal" id="section7">
+      <div class="board-container">
+        <!-- 상단 메뉴 -->
+        <nav style="margin-bottom: 20px;">
+          <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: #333; font-weight: bold;">홈</a> | 
+          <a href="{{ '/' | relative_url }}#section7" style="text-decoration: none; color: #3ecf8e; font-weight: bold;">게시판</a>
+        </nav>
 
-    <div class="header-box">
-      <h1>자유 게시판</h1>
-      <a href="{{ '/write.html' | relative_url }}" class="btn-write">✏️ 글쓰기</a>
-    </div>
+        <div class="header-box">
+          <h1>자유 게시판</h1>
+          <a href="{{ '/write.html' | relative_url }}" class="btn-write">✏️ 글쓰기</a>
+        </div>
 
-    <!-- 게시글 목록 테이블 -->
-    <table class="board-table">
-      <thead>
-        <tr>
-          <th>제목</th>
-          <th class="writer-col">작성자</th>
-          <th class="date-col">작성일</th>
-        </tr>
-      </thead>
-      <tbody id="board-list">
-        {% for post in site.posts %}
-          <tr>
-            <td class="title-col">
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </td>
-            <td class="writer-col">{{ post.author | default: "관리자" }}</td>
-            <td class="date-col">{{ post.date | date: "%Y-%m-%d" }}</td>
-          </tr>
-        {% empty %}
-          <tr>
-            <td colspan="3" style="text-align: center;">등록된 게시글이 없습니다.</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+        <!-- 게시글 목록 테이블 -->
+        <table class="board-table">
+          <thead>
+            <tr>
+              <th>제목</th>
+              <th class="writer-col">작성자</th>
+              <th class="date-col">작성일</th>
+            </tr>
+          </thead>
+          <tbody id="board-list">
+            {% for post in site.posts %}
+              <tr>
+                <td class="title-col">
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </td>
+                <td class="writer-col">{{ post.author | default: "관리자" }}</td>
+                <td class="date-col">{{ post.date | date: "%Y-%m-%d" }}</td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="3" style="text-align: center;">등록된 게시글이 없습니다.</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <!-- 지킬 개별 페이지/포스트 본문 삽입 영역 -->
+        {{ content }}
+      </div>
+
+      <!-- 하단 푸터 영역 -->
+      <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-info">
+            <p class="footer-company">상호:에이플러스퀵서비스 가평군지점</p>
+            <p>통신판매업 제 2012-서울강북-0482호</p>
+            <p>대표전화: <a href="tel:1661-4262" class="footer-tel">1661-4262</a></p>
+            <p>사업자번호:217-03-31209</p>
+            <p>대표자:이서미</p>
+            <p>이메일:aplusquick78@gmail.com</p>
+            <p>365일 24시간 연중무휴 관제센터 운영</p>
+            <p class="footer-copyright">Copyright © 에이플러스 퀵서비스 All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </section>
   </div>
 
-  <!-- 하단 푸터 영역 -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-info">
-        <p class="footer-company">상호:에이플러스퀵서비스 가평군지점</p>
-        <p>통신판매업 제 2012-서울강북-0482호</p>
-        <p>대표전화: <a href="tel:1661-4262" class="footer-tel">1661-4262</a></p>
-        <p>사업자번호:217-03-31209</p>
-        <p>대표자:이서미</p>
-        <p>이메일:aplusquick78@gmail.com</p>
-        <p>365일 24시간 연중무휴 관제센터 운영</p>
-        <p class="footer-copyright">Copyright © 에이플러스 퀵서비스 All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
-</section>
   <script src="{{ '/file/aplusquick.js' | relative_url }}"></script>
         
   <script>
