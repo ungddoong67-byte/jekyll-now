@@ -189,8 +189,8 @@ body::-webkit-scrollbar {
    [검정 배경 / 흰색 글씨 푸터 스타일]
 ------------------------------------------------------------- */
 .site-footer { 
-  background-color: #000000; 
-  color: #ffffff; 
+  background-color: #ffffff; 
+  color: #000000; 
   padding: 40px 20px; 
   font-size: 14px; 
   line-height: 1.5; 
